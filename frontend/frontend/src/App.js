@@ -1,18 +1,21 @@
 // import { Route, Switch } from "react-router-dom";
 
-import Product from "./components/Products";
-// import Buyers from "./components/Buyers";
-// import NavBar from './components/NavBar';
-// import Products from "./components/Products";
+import Buyers from "./components/Buyers";
+import Products from "./components/Products";
 import React from "react";
+import Retailors from "./components/Retailors";
 
-//import Retailors from "./components/Retailors";
+// import NavBar from './components/NavBar';
+
+
 
 function App() {
   return (
     <div>
       <h1>come home </h1>
-     <Product/>
+     <Buyers/>
+     <Retailors/>
+     <Products/>
 
     </div>
   );

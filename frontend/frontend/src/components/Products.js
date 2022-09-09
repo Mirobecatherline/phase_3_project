@@ -1,6 +1,8 @@
 import React,{useEffect, useState} from "react";
 
-function Product() {
+import DisplayProducts from "./DisplayProducts";
+
+function Products() {
  const [product,setproduct]=useState([])
     
   
@@ -14,10 +16,10 @@ function Product() {
  return(
         <div>
           {product.map((data)=>{
-            
-            return console.log(data.title)
+           return <DisplayProducts products={data} key={data.id}/>
+           
         })}
         </div>
     )
 }
-export default Product;
+export default Products;
