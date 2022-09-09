@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import AddRetailor from "./AddRetailor";
+
 function Retailors(params) {
     const[buyers,setbuyers]=useState([])
     useEffect(()=>{
@@ -8,10 +10,22 @@ function Retailors(params) {
         .then(data=>setbuyers(data))
         
     },[])
-    console.log(buyers);
+  
+    function addnew(newadded) {
+        const configObject={
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(newadded)
+        }
+        fetch("https://fakestoreapi.com/products",configObject)
+        .then (res=>res.json())
+        .then (data=>setbuyers(currentdata=>[...currentdata,data]) )                
+  }
+
 
     return(
         <div>
+            <AddRetailor addnew={addnew}/>
             <table className="table table-bordered">
                     <thead>
                         <tr>
@@ -23,7 +37,7 @@ function Retailors(params) {
                     </thead>
             {buyers.map((buyers)=>
                 
-                    <tbody>
+                    <tbody key={buyers.id}>
                         <tr>
                         <th scope="row">{buyers.id}</th>
                         <td>{buyers.title}</td>
