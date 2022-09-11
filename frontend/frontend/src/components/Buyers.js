@@ -6,7 +6,7 @@ function Buyers() {
     const[buyers,setbuyers]=useState([])
     
     useEffect(()=>{
-        fetch("https://fakestoreapi.com/products")
+        fetch("http://localhost:9292/buyers")
         .then((res)=>res.json())
         .then(data=>setbuyers(data))
         
@@ -20,14 +20,14 @@ function Buyers() {
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(newadded)
             }
-            fetch("https://fakestoreapi.com/products",configObject)
+            fetch("http://localhost:9292/buyers",configObject)
             .then (res=>res.json())
             .then (data=>setbuyers(currentdata=>[...currentdata,data]) )                
       }
       function handleclick({id}){
         
         setbuyers(buyers.filter(i=>i.id !==id))
-        fetch(`https://fakestoreapi.com/products/${id}`,{
+        fetch(`http://localhost:9292/buyers/${id}`,{
             method: 'DELETE'
         })
             .then(resp => resp.json())
@@ -39,11 +39,12 @@ function Buyers() {
             <AddBuyer addnew={addnew}/>
             <table className="table table-bordered">
                     <thead>
+                        <tr>List of all buyers</tr>
                         <tr>
                         <th scope="col">#</th>
-                        <th scope="col">TITLE</th>
-                        <th scope="col">PRICE</th>
-                        <th scope="col">CATEGORY</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">LOCATION</th>
+                        <th scope="col">GENDER</th>
                         <th scope="col">DELETE</th>
                         </tr>
                     </thead>
@@ -52,9 +53,9 @@ function Buyers() {
                     <tbody key={index}>
                         <tr>
                         <th scope="row">{buyers.id}</th>
-                        <td>{buyers.title}</td>
-                        <td>{buyers.price}</td>
-                        <td>{buyers.category}</td>
+                        <td>{buyers.name}</td>
+                        <td>{buyers.location}</td>
+                        <td>{buyers.gender}</td>
                         <td><button type="button" class="btn btn-outline-danger" onClick={()=> handleclick(buyers)}>Delete</button></td>
                         </tr>
                     </tbody>
