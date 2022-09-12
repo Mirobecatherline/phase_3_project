@@ -15,10 +15,14 @@ function Products() {
 
  return(
         <div>
+            <br/>
+        <p class="fw-bold text-center fs-1 text-decoration-underline" > Welcome to product page</p>
+          <div className="flex-wrap" style={{justifyContent:"center",flexDirection:"row",display:"flex"}}>
           {product.map((data)=>{
            return <DisplayProducts products={data} key={data.id}/>
            
         })}
+        </div>
         </div>
     )
 }

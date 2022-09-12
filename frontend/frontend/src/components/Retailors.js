@@ -34,10 +34,12 @@ function Retailors(params) {
 
     return(
         <div>
+            <br/>
+             <p class="fw-bold text-center fs-1 text-decoration-underline" > Welcome to retailor page</p>
             <AddRetailor addnew={addnew}/>
             <table className="table table-bordered">
                     <thead>
-                        <tr style={{font:"3px",font:"bold"}}>List of all retailors</tr>
+                        <tr className="fw-bold text-center fs-2">List of all retailors</tr>
                         <tr>
                         <th scope="col">#</th>
                         <th scope="col">NAME</th>

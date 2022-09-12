@@ -36,10 +36,12 @@ function Buyers() {
 
     return(
         <div>
+            <br/>
+             <p class="fw-bold text-center fs-1 text-decoration-underline" > Welcome to buyer page</p>
             <AddBuyer addnew={addnew}/>
             <table className="table table-bordered">
                     <thead>
-                        <tr>List of all buyers</tr>
+                        <tr className="fw-bold text-center fs-2">List of all buyers</tr>
                         <tr>
                         <th scope="col">#</th>
                         <th scope="col">NAME</th>
