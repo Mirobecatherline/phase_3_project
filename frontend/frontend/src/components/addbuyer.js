@@ -28,9 +28,9 @@ function handlechange(e) {
                         <div id="emailHelp" className="form-text">please input your location.</div>
                     </div>
                     <div className="mb-3">
-                        <label for="priceinput" className="form-label">Price</label>
+                        <label for="priceinput" className="form-label">P</label>
                         <input type="text" className="form-control" id="priceinput" name="gender" value={newbuyer.gender}/>
-                        <div id="emailHelp" className="form-text">please input your price.</div>
+                        <div id="emailHelp" className="form-text">please input your gender.</div>
                     </div>
                     <button type="submit" className="btn btn-primary">Add Buyer</button>
             </form>
